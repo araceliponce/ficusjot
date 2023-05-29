@@ -1,0 +1,587 @@
+  body {
+    color-scheme: light dark;
+
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    margin: 0;
+    padding-inline: 2rem;
+
+    overflow-x: hidden;
+  }
+
+  .imgContainer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -6;
+  }
+
+  img {
+
+    background: pink;
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+
+  svg[aria-hidden=true] {
+    pointer-events: none;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  input,
+  button {
+    background: transparent;
+    border: none;
+    font: inherit;
+    color: inherit;
+  }
+
+  button {
+    cursor: pointer;
+    /* padding: 1rem; */
+    border-radius: .3rem;
+    transition: all .3s ease-in;
+
+  }
+
+
+
+
+  .deleteButton {
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-content: center;
+  }
+
+  .deleteButton svg {
+    width: 1rem;
+    height: 1rem;
+    opacity: 0.5;
+  }
+
+  /* 
+  button:hover {
+    background: lightblue;
+
+  } */
+
+  input:focus-visible {
+    outline: none;
+    border-bottom: 1px solid;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+
+
+
+
+  .topSection {
+    height: 40vh;
+
+    display: grid;
+    align-content: center;
+    gap: 1rem;
+  }
+
+
+
+
+
+  .prefixContainer {
+    margin-inline: auto;
+
+    width: min(40rem, 80%);
+    /* padding-block: 4rem; */
+
+  }
+
+
+  .gridGroup {
+    display: grid;
+    grid-template-columns: 20ch 3rem;
+  }
+
+
+  #prefixInput {
+    padding: .1rem 1rem;
+  }
+
+
+  /* addprefixbutton obtiene color cuando el input esta NO vacio */
+
+  form:invalid #addPrefixButton svg {
+    color: white;
+  }
+
+  #addPrefixButton {
+    display: grid;
+    place-content: center;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 100vh;
+    padding: 0;
+  }
+
+  #addPrefixButton svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  #prefixList {
+    display: flex;
+    gap: .2eem;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  #prefixList li {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    flex-flow: row wrap;
+
+    background: #9a9c9c40;
+    border-radius: 1em;
+    padding: .1rem 1rem;
+    padding-left: 1.5rem;
+
+    user-select: none;
+
+  }
+
+  #prefixList li:hover {
+    background: gray;
+  }
+
+  .searchContainer {
+    position: relative;
+    display: grid;
+    justify-content: stretch;
+    margin-inline: auto;
+    overflow: hidden;
+    border-radius: 2em;
+    transition: all .3s ease-in;
+    outline: 1px solid;
+
+    width: min(50rem, 80%);
+  }
+
+  .searchContainer:focus-within {
+    outline: 1px solid lightblue;
+    background: linear-gradient(77deg, #ffc0cb4a 30%, #ffc0cb38)
+  }
+
+  .searchContainer:focus-within #searchButton {
+    opacity: 1;
+  }
+
+  #searchButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: inherit;
+    bottom: 0;
+    padding-inline: 2rem;
+    opacity: 0;
+  }
+
+
+  #searchInput {
+    width: 100%;
+    padding: 1.1rem 1.5rem;
+    font-size: 1.2rem;
+    border: none;
+    display: block;
+    border-radius: 1rem;
+
+  }
+
+
+  body {
+    transition: .2s all ease;
+  }
+
+  .custom {
+    background: var(--custom-color);
+  }
+
+  .dotted {
+    background-color: #e5e5f7;
+    background-image: radial-gradient(#444cf7 1px, #e5e5f750 1px);
+    background-size: 20px 20px;
+  }
+
+  .notebook {
+    /* https://codepen.io/designcouch/pen/bGvzKE */
+    background: linear-gradient(to bottom, white 24px, #00b0d750 1px);
+    background-size: 100% 25px;
+  }
+
+  .sr-only {
+    width: 0
+  }
+
+
+
+
+  /* Colores */
+
+
+  #bg-selector {
+
+    display: grid;
+    position: absolute;
+    right: 2rem;
+    top: 7rem;
+  }
+
+  .color,
+  .clr-field {
+    width: 24px;
+    height: 24px;
+    border: none;
+    outline: 1px solid white;
+    cursor: pointer;
+  }
+
+  /* en el caso de patterns,  para ver los detalles mejor */
+  .color {
+    background-size: .5rem .5rem;
+    background-position: center;
+  }
+
+  .color.notebook {
+    background: linear-gradient(to bottom, white 6px, #00b0d750 1px);
+    background-size: 100% 7px !important;
+  }
+
+  .color img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+  }
+
+  .black {
+    background: #222;
+    color: white;
+  }
+
+  .gold {
+    background: #100b33;
+    color: #eebd75;
+  }
+
+  .gray,
+  .picker {
+    background: #eaeaea;
+  }
+
+  .white {
+    background: #fff;
+  }
+
+  .blue {
+    background: #00529c;
+  }
+
+  #colorpicker {
+    visibility: hidden;
+  }
+
+
+
+
+
+
+
+  /* color */
+  /* end base styles */
+
+
+
+
+
+  input#coloris,
+  .clr-field button {
+
+    /* width: 24px; */
+    width: 100%;
+    padding: 0;
+  }
+
+  .clr-field button::after {
+    box-shadow: none;
+  }
+
+  .clr-field {
+    /* width: fit-content; */
+    display: flex;
+    /* flex-direction: row-reverse; */
+    outline-style: dotted;
+
+  }
+
+
+  .clr-open {
+    left: none !important;
+    right: 0 !important;
+  }
+
+
+
+
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  input,
+  form {
+    font: inherit;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+
+
+
+  .btn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .input-container {
+    margin-top: 20px;
+  }
+
+  .input-container .text {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: inherit;
+    margin-right: 10px;
+  }
+
+  .input-container button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+
+
+
+
+
+  #contenedorDeDatos {
+    /* max-width: 20rem; */
+    /* margin-inline: 2rem; */
+    overflow-y: scroll;
+    /* position: relative; */
+
+    position: absolute;
+    top: 40vh;
+
+    bottom: 7rem;
+    /* padding-inline: 2rem; */
+    display: grid;
+
+    left: 0;
+    right: 0;
+
+    width: min(50rem, 90vw);
+    margin-inline: auto;
+
+  }
+
+
+
+
+  #copyable-texts {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* display: grid; */
+    display: flex;
+    flex-direction: column;
+  }
+
+  #copyable-texts .text {
+    background-color: #eebd75;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #111;
+
+    position: relative;
+    cursor: copy;
+    border-radius: .3rem;
+  }
+
+  #copyable-texts input {
+    min-height: 3rem;
+    padding-inline: 1rem;
+  }
+
+  #copyable-texts input:focus {
+    outline: none;
+  }
+
+  /* #copyable-texts button:last-child {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-height: 3rem;
+    padding-inline: 1rem;
+
+  } */
+
+
+  #copyable-texts button {
+    position: absolute;
+    bottom: 0;
+    /* background: pink; */
+    height: 100%;
+    top: 0;
+    right: 0;
+
+    width: 3rem;
+  }
+
+  #copyable-texts button svg {
+    height: 1.3rem;
+    width: 1.3rem;
+  }
+
+  #copyable-texts button:hover {
+    color: red;
+  }
+
+
+
+  #contenedorAgregarDatos {
+    --color: white;
+
+    position: fixed;
+    bottom: 2rem;
+    min-height: 3rem;
+    background: var(--color);
+    color: black;
+    /* display: grid; */
+    /* padding: 2rem; */
+    border-radius: 1rem;
+
+
+    display: flex;
+    flex-wrap: wrap;
+
+    padding-inline: 2rem;
+    /* padding-block: 1rem; */
+    height: 3rem;
+    overflow: hidden;
+  }
+
+
+  #contenedorAgregarDatos {
+    left: 2rem;
+    right: 2rem;
+    left: 0;
+    right: 0;
+    width: min(50rem, 90vw);
+    margin-inline: auto;
+  }
+
+
+
+  #add-button.hidden {
+    height: 0;
+    opacity: 0;
+    transform: translateY(-2rem);
+    padding: 0;
+  }
+
+  #add-button {
+    /* margin-left: 2rem; */
+    width: 100%;
+    opacity: 1;
+    padding-block: 1rem;
+    transform: translateY(0);
+  }
+
+  #contenedorAgregarDatos input {
+    flex-grow: 1;
+  }
+
+  .w-100 {
+    width: 100%;
+  }
+
+  #contenedorAgregarDatos button:last-child {
+    /* background: white; */
+    color: pink;
+
+    color: #222;
+
+  }
+
+  #contenedorAgregarDatos>div {
+    padding-block: 1rem;
+  }
+
+
+  /* .toastify:hover {
+    cursor: default !important;
+  } */
+
+
+  .toastv2 {
+    background: #a3243b !important;
+    cursor: default !important;
+
+    display: flex !important;
+    align-items: center;
+    gap: .3em;
+    font-size: .8rem;
+    /* padding: .5rem 1rem; */
+    padding: 0;
+    padding-inline: .7rem 0;
+    font-family: sans-serif;
+    height: fit-content;
+
+  }
+
+  .toast-close {
+    align-self: center;
+    margin: 0;
+    padding: 0;
+    height: 2rem;
+    width: 2rem;
+    display: grid;
+    place-content: center;
+    line-height: 0;
+  }

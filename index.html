@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ficus Jot</title>
+
+
+
+  <script>
+    const bodyBgClass = localStorage.getItem('bodyBgClass')
+    const savedColoris = localStorage.getItem('savedColoris')
+  </script>
+
+  <!-- TOASTS -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
+
+
+
+
+  <!-- COLORIS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mdbassit/Coloris@latest/dist/coloris.min.css" />
+  <script src="https://cdn.jsdelivr.net/gh/mdbassit/Coloris@latest/dist/coloris.min.js"></script>
+
+  <!-- CUSTOM -->
+  <link rel="stylesheet" href="ficusjot.css">
+  <script src="ficusjot.js" defer></script>
+
+</head>
+
+
+<body class="gold">
+
+  <script>
+    if (bodyBgClass) {
+      console.log('tengo un bg guardado', bodyBgClass)
+
+      document.body.className = bodyBgClass;
+    } if (savedColoris) {
+      console.log(savedColoris)
+      document.body.style.setProperty("--custom-color", savedColoris)
+    }
+    else {
+      console.log('no tengo un bg guardado')
+    }
+  </script>
+
+  <div class="imgContainer">
+    <!-- <img src="https://source.unsplash.com/800x600/?nature" alt="20170131_075622" title="20170131_075622" id="wows1_0" /> -->
+
+  </div>
+
+
+  <div id="bg-selector" aria-label="escoge un bg">
+    <div class="color white"></div>
+    <div class="color gray"></div>
+    <div class="color black"></div>
+    <div class="color gold"></div>
+    <div class="color blue"></div>
+    <div class="color dotted"></div>
+    <div class="color notebook"></div>
+    <input id="coloris" type="text" class="custom" data-coloris />
+  </div>
+
+  <div class="topSection">
+
+    <div class="prefixContainer">
+      <ul id="prefixList" class="inlineList">
+
+        <form class="gridGroup">
+          <input type="text" id="prefixInput" placeholder="Agrega un prefijo" required>
+          <button id="addPrefixButton">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M11 17h2v-4h4v-2h-4V7h-2v4H7v2h4v4Zm1 5q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Z" />
+            </svg>
+          </button>
+        </form>
+      </ul>
+
+      </ul>
+
+    </div>
+
+    <div class="searchContainer">
+      <input type="search" id="searchInput">
+      <button id="searchButton">BUSCAR</button>
+    </div>
+  </div>
+
+
+
+
+  <div id="contenedorDeDatos">
+    <ul id="copyable-texts">
+      <li class="text">algo que quieras recordar</li>
+    </ul>
+
+  </div>
+
+  <div id="contenedorAgregarDatos">
+    <button id="add-button">Añadir</button>
+    <div style="display:none" class="w-100">
+      <input type="text" placeholder="Escribe aquí...">
+      <button id="save-button">Guardar</button>
+    </div>
+  </div>
+  </div>
+
+
+
+
+
+
+
+</body>
+
+</html>
