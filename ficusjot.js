@@ -260,7 +260,7 @@ function createTextItem(text) {
   const textItem = document.createElement('li');
   const textTrashButton = document.createElement('button');
   textTrashButton.innerHTML = trashIcon;
-  console.log(textTrashButton.innerHTML)
+  // console.log(textTrashButton.innerHTML)
 
   textItem.classList.add('text');
 
